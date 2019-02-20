@@ -2,25 +2,29 @@
 
 language: python
 
-python:
-  - "3.7"
-
-env: 
-  - TOX_ENV=django111-py35
-  - TOX_ENV=django111-py36
-  - TOX_ENV=django111-py37
-  - TOX_ENV=django2-py35
-  - TOX_ENV=django2-py36
-  - TOX_ENV=django2-py37
-  - TOX_ENV=django21-py35
-  - TOX_ENV=django21-py36
-  - TOX_ENV=django21-py37
-  - TOX_ENV=django22-py35
-  - TOX_ENV=django22-py36
-  - TOX_ENV=django22-py37
-
 matrix:
   fast_finish: true
+  include:
+    - python: 3.5
+      env:
+        - TOX_ENV=django111-py35
+        - TOX_ENV=django2-py35
+        - TOX_ENV=django21-py35
+        - TOX_ENV=django22-py35
+    - python: 3.6
+      env:
+        - TOX_ENV=django111-py36
+        - TOX_ENV=django2-py36
+        - TOX_ENV=django21-py36
+        - TOX_ENV=django22-py36
+    - python: 3.7
+      dist: xenial
+      env:
+        - TOX_ENV=django111-py37
+        - TOX_ENV=django2-py37
+        - TOX_ENV=django21-py37
+        - TOX_ENV=django22-py37
+
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements_test.txt
