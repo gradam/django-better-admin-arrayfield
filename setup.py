@@ -49,6 +49,7 @@ setup(
     version=version,
     description="""Better ArrayField widget for admin""",
     long_description=readme + "\n\n" + history,
+    long_description_content_type="text/markdown",
     author="Jakub Semik",
     author_email="kuba.semik@gmail.com",
     url="https://github.com/gradam/django-better-admin-arrayfield",
