@@ -14,10 +14,10 @@ Supported Django versions: 1.11, 2.0, 2.1, 2.2
 It changes comma separated widget to list based in admin panel.
 
 Before:
-![Alt text](readme_images/before.jpg?raw=true "Before")
+![Alt text](https://raw.githubusercontent.com/gradam/django-better-admin-arrayfield/master/readme_images/before.jpg "Before")
 
 After:
-![Alt text](readme_images/after.png?raw=true "After")
+![Alt text](https://raw.githubusercontent.com/gradam/django-better-admin-arrayfield/master/readme_images/after.png "After")
 
 ## Quickstart
 
