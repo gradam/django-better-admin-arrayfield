@@ -1,0 +1,15 @@
+{% load static %}
+
+{% spaceless %}
+<div class="dynamic-array-widget">
+  <ul>
+    {% for widget in widget.subwidgets %}
+      <li class="array-item">
+        {% include widget.template_name %}
+        <div class="remove"><div class="remove_sign"></div></div>
+      </li>
+    {% endfor %}
+  </ul>
+  <div><button type="button" class="add-array-item">Add another</button></div>
+</div>
+{% endspaceless %}

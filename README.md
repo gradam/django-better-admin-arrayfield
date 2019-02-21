@@ -8,6 +8,16 @@
 
 Better ArrayField widget for admin
 
+Supported Python versions: 3.5, 3.6, 3.7
+Supported Django versions: 1.11, 2.0, 2.1, 2.2
+
+It changes comma separated widget to list based in admin panel.
+
+Before:
+![Alt text](readme_images/before.jpg?raw=true "Before")
+
+After:
+![Alt text](readme_images/after.png?raw=true "After")
 
 ## Quickstart
 
@@ -17,7 +27,7 @@ Install Django better admin ArrayField:
 
 Add it to your \`INSTALLED\_APPS\`:
 
-``` python
+```python
 INSTALLED_APPS = (
     ...
     'django_better_admin_arrayfield.apps.DjangoBetterAdminArrayfieldConfig',
@@ -25,23 +35,19 @@ INSTALLED_APPS = (
 )
 ```
 
-Add Django better admin ArrayField's URL
-patterns:
 
-``` python
-from django_better_admin_arrayfield import urls as django_better_admin_arrayfield_urls
+## Usage
 
+`django_better_admin_arrayfield.models.fields.ArrayField` is a drop-in replacement for standard Django `ArrayField`.
 
-urlpatterns = [
+In your admin class add `DynamicArrayMixin`:
+
+```python
+class MyModelAdmin(admin.ModelAdmin, DynamicArrayMixin):
     ...
-    url(r'^', include(django_better_admin_arrayfield_urls)),
-    ...
-]
 ```
 
-## Features
-
-  - TODO
+That's it.
 
 ## Running Tests
 
@@ -60,6 +66,8 @@ Install pre-commit black hook
     (myenv) $ pre-commit install
 
 ## Credits
+
+Inspired by: https://stackoverflow.com/a/49370480/4638248
 
 Tools used in rendering this
     package:

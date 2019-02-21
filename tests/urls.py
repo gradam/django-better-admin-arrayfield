@@ -4,6 +4,4 @@ from __future__ import unicode_literals, absolute_import
 from django.conf.urls import url, include
 
 
-urlpatterns = [
-    url(r'^', include('django_better_admin_arrayfield.urls', namespace='django_better_admin_arrayfield')),
-]
+urlpatterns = [url(r"^", include("django_better_admin_arrayfield.urls", namespace="django_better_admin_arrayfield"))]

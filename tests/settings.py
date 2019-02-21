@@ -1,20 +1,11 @@
 # -*- coding: utf-8
-from __future__ import unicode_literals, absolute_import
-
-import django
-
 DEBUG = True
 USE_TZ = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "w7r3dc3#mcs2e5cs7!vb_647eng4dw6i2io+k9k6#solz63i$_"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": ":memory:",
-    }
-}
+DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
 
 ROOT_URLCONF = "tests.urls"
 
@@ -25,9 +16,8 @@ INSTALLED_APPS = [
     "django_better_admin_arrayfield",
 ]
 
+TEMPLATES = [{"BACKEND": "django.template.backends.django.DjangoTemplates", "APP_DIRS": True}]
+
 SITE_ID = 1
 
-if django.VERSION >= (1, 10):
-    MIDDLEWARE = ()
-else:
-    MIDDLEWARE_CLASSES = ()
+MIDDLEWARE = ()
