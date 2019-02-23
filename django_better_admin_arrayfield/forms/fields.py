@@ -33,3 +33,8 @@ class DynamicArrayField(forms.Field):
         if cleaned_data and self.required:
             raise forms.ValidationError(self.error_messages["required"])
         return cleaned_data
+
+    def has_changed(self, initial, data):
+        if not data and not initial:
+            return False
+        return super().has_changed(initial, data)

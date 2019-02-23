@@ -26,9 +26,9 @@ class DynamicArrayWidget(forms.TextInput):
     def value_from_datadict(self, data, files, name):
         try:
             getter = data.getlist
+            return [value for value in getter(name) if value]
         except AttributeError:
-            getter = data.get
-        return getter(name)
+            return data.get(name)
 
     def format_value(self, value):
         return value or []
