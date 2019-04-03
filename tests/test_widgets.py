@@ -1,6 +1,6 @@
 from django.template.loader import get_template
 
-from django_better_admin_arrayfield.forms.fields import DynamicArrayWidget
+from django_better_admin_arrayfield.forms.widgets import DynamicArrayWidget
 
 
 def test_template_exists():

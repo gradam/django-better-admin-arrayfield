@@ -30,7 +30,7 @@ class DynamicArrayField(forms.Field):
                 )
         if errors:
             raise forms.ValidationError(list(chain.from_iterable(errors)))
-        if cleaned_data and self.required:
+        if not cleaned_data and self.required:
             raise forms.ValidationError(self.error_messages["required"])
         return cleaned_data
 
