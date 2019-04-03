@@ -26,12 +26,9 @@ matrix:
         - TOX_ENV=django22-py37
 
 
-addons:
-  apt:
-    sources:
-      - travis-ci/sqlite3
-    packages:
-      - sqlite3
+before_install:
+  - sudo apt-add-repository -y ppa:travis-ci/sqlite3
+  - sudo apt-get install sqlite3=3.7.15.1-1~travis1
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements_test.txt
