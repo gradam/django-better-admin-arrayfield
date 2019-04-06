@@ -6,12 +6,14 @@ matrix:
   fast_finish: true
   include:
     - python: 3.5
+      dist: xenial
       env:
         - TOX_ENV=django111-py35
         - TOX_ENV=django2-py35
         - TOX_ENV=django21-py35
         - TOX_ENV=django22-py35
     - python: 3.6
+      dist: xenial
       env:
         - TOX_ENV=django111-py36
         - TOX_ENV=django2-py36
