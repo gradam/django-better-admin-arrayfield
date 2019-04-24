@@ -40,6 +40,14 @@ INSTALLED_APPS = (
 
 `django_better_admin_arrayfield.models.fields.ArrayField` is a drop-in replacement for standard Django `ArrayField`.
 
+Import it like below and use it in your model class definition.
+```python
+from django_better_admin_arrayfield.models.fields import ArrayField
+```
+
+Import `DynamicArrayMixin` like below syntax
+`from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin`
+
 In your admin class add `DynamicArrayMixin`:
 
 ```python
