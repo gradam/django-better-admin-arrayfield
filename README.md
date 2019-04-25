@@ -51,7 +51,7 @@ from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
 ```
 
 In your admin class add `DynamicArrayMixin`:
-
+    ...
 ```python
 class MyModelAdmin(admin.ModelAdmin, DynamicArrayMixin):
 ```
