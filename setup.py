@@ -41,8 +41,10 @@ if sys.argv[-1] == "tag":
     os.system("git push --tags")
     sys.exit()
 
-readme = open("README.md").read()
-history = open("HISTORY.md").read().replace(".. :changelog:", "")
+with open("README.md") as f:
+    readme = f.read()
+with open("HISTORY.md") as f:
+    history = f.read().replace(".. :changelog:", "")
 
 setup(
     name="django-better-admin-arrayfield",
