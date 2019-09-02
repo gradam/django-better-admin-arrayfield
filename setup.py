@@ -60,7 +60,9 @@ setup(
     zip_safe=False,
     keywords="django-better-admin-arrayfield",
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
+        "Framework :: Django :: 2.2",
+        "Framework :: Django :: 2.1",
         "Framework :: Django :: 2.0",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
