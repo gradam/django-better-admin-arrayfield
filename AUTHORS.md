@@ -6,4 +6,6 @@
 
 ## Contributors
 
-None yet. Why not be the first?
+| Full Name | GitHub |
+| ------ | ------ |
+| Davit Tovmasyan | [@davitovmasyan]( https://github.com/davitovmasyan )` |
