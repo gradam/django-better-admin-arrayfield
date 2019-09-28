@@ -3,7 +3,13 @@ window.addEventListener('load', function () {
     function addRemoveEventListener(widgetElement) {
         widgetElement.querySelectorAll('.remove').forEach(function (element) {
             element.addEventListener('click', function () {
-                this.parentNode.remove();
+                var array_items = this.parentNode.parentNode.childElementCount;
+                if (array_items == 1) {
+                    this.parentNode.querySelector('input').value = '';
+                }
+                else {
+                    this.parentNode.remove();
+                }
             });
         });
     }
