@@ -1,5 +1,9 @@
 # History
 
+## 1.0.4 (2019-09-02)
+
+  - Can add item after removing everything from the list
+
 ## 1.0.3 (2019-09-02)
 
   - Can add item after removing everything from the list

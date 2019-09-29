@@ -18,8 +18,11 @@ class DynamicArrayField(forms.Field):
     def clean(self, value):
         cleaned_data = []
         errors = []
-        value = filter(None, value)
+        value = list(filter(None, value))
+        if not value:
+            cleaned_data = None
         for index, item in enumerate(value):
+            print(index, item)
             try:
                 cleaned_data.append(self.base_field.clean(item))
             except forms.ValidationError as error:

@@ -6,13 +6,15 @@ class DynamicArrayWidget(forms.TextInput):
     template_name = "django_better_admin_arrayfield/forms/widgets/dynamic_array.html"
 
     def get_context(self, name, value, attrs):
-        value = value or [""]
-        context = super().get_context(name, value, attrs)
+        context_value = value or [""]
+        context = super().get_context(name, context_value, attrs)
         final_attrs = context["widget"]["attrs"]
         id_ = context["widget"]["attrs"].get("id")
+        context["widget"]["is_none"] = value is None
 
         subwidgets = []
         for index, item in enumerate(context["widget"]["value"]):
+            print(index, item)
             widget_attrs = final_attrs.copy()
             if id_:
                 widget_attrs["id"] = "{id_}_{index}".format(id_=id_, index=index)

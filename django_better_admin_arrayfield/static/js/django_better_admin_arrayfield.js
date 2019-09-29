@@ -1,38 +1,39 @@
+// I am to lazy to add js transpiler and compressor to this. just use https://jscompress.com
+
 window.addEventListener('load', function () {
+    let item_count = 1;
 
     function addRemoveEventListener(widgetElement) {
-        widgetElement.querySelectorAll('.remove').forEach(function (element) {
-            element.addEventListener('click', function () {
-                var array_items = this.parentNode.parentNode.childElementCount;
-                if (array_items == 1) {
-                    this.parentNode.querySelector('input').value = '';
-                }
-                else {
-                    this.parentNode.remove();
-                }
+        widgetElement.querySelectorAll('.remove').forEach(element => {
+            element.addEventListener('click', () => {
+                element.parentNode.remove();
             });
         });
     }
 
-    document.querySelectorAll('.dynamic-array-widget').forEach(function (widgetElement) {
+    document.querySelectorAll('.dynamic-array-widget').forEach(widgetElement => {
 
-        var inititalElement = widgetElement.querySelector('.array-item');
-        var elementTemplate = inititalElement.cloneNode(true);
-        var parentElement = inititalElement.parentElement;
+        const initialElement = widgetElement.querySelector('.array-item');
+        const elementTemplate = initialElement.cloneNode(true);
+        const parentElement = initialElement.parentElement;
 
+        if (initialElement.getAttribute('data-isNone')) {
+            initialElement.remove();
+            elementTemplate.removeAttribute('data-isNone');
+            elementTemplate.removeAttribute('style');
+        }
         addRemoveEventListener(widgetElement);
 
-        widgetElement.querySelector('.add-array-item').addEventListener('click', function () {
-            var newElement = elementTemplate.cloneNode(true);
-            var id_parts = newElement.querySelector('input').getAttribute('id').split('_');
-            var id = id_parts.slice(0, -1).join('_') + '_' + String(parseInt(id_parts.slice(-1)[0]) + 1);
+        widgetElement.querySelector('.add-array-item').addEventListener('click', () => {
+            item_count++;
+            const newElement = elementTemplate.cloneNode(true);
+            const id_parts = newElement.querySelector('input').getAttribute('id').split('_');
+            const id = id_parts.slice(0, -1).join('_') + '_' + String(item_count - 1);
             newElement.querySelector('input').setAttribute('id', id);
             newElement.querySelector('input').value = '';
 
             addRemoveEventListener(newElement);
             parentElement.appendChild(newElement);
         });
-
     });
-
 });
