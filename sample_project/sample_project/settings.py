@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_better_admin_arrayfield.apps.DjangoBetterAdminArrayfieldConfig",
+    "django_better_admin_arrayfield",
     "sample_app.apps.SampleAppConfig",
 ]
 
