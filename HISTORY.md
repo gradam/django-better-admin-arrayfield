@@ -1,5 +1,9 @@
 # History
 
+## 1.0.5 (2019.12.30)
+
+  - Add python 3.8 and Django 3.0 to tests
+
 ## 1.0.4 (2019-09-02)
 
   - Can add item after removing everything from the list
