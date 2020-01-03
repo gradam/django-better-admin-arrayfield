@@ -14,7 +14,6 @@ class DynamicArrayWidget(forms.TextInput):
 
         subwidgets = []
         for index, item in enumerate(context["widget"]["value"]):
-            print(index, item)
             widget_attrs = final_attrs.copy()
             if id_:
                 widget_attrs["id"] = "{id_}_{index}".format(id_=id_, index=index)
