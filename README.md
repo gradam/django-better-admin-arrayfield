@@ -32,7 +32,7 @@ Add it to your \`INSTALLED\_APPS\`:
 ```python
 INSTALLED_APPS = (
     ...
-    'django_better_admin_arrayfield.apps.DjangoBetterAdminArrayfieldConfig',
+    'django_better_admin_arrayfield',
     ...
 )
 ```
