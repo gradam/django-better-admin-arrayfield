@@ -63,6 +63,7 @@ setup(
     keywords="django-better-admin-arrayfield",
     classifiers=[
         "Development Status :: 4 - Beta",
+        "Framework :: Django :: 3.0",
         "Framework :: Django :: 2.2",
         "Framework :: Django :: 2.1",
         "Framework :: Django :: 2.0",
@@ -73,5 +74,6 @@ setup(
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
     ],
 )

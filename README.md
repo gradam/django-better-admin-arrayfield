@@ -8,8 +8,10 @@
 
 Better ArrayField widget for admin
 
-Supported Python versions: 3.5, 3.6, 3.7
-Supported Django versions: 1.11, 2.0, 2.1, 2.2
+Supported Python versions: 3.5, 3.6, 3.7, 3.8
+Supported Django versions: 1.11, 2.0, 2.1, 2.2, 3.0
+
+might work with different django/python versions as well but I did not test that.
 
 It changes comma separated widget to list based in admin panel.
 
