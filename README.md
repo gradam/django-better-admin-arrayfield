@@ -8,7 +8,12 @@
 
 Better ArrayField widget for admin
 
-Supported Python versions: 3.5, 3.6, 3.7, 3.8
+Supported Python versions: [![Python 3.5](https://img.shields.io/badge/python-3.5-blue.svg)](https://www.python.org/downloads/release/python-350/) [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/) [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+
+
+
+
+
 Supported Django versions: 1.11, 2.0, 2.1, 2.2, 3.0
 
 might work with different django/python versions as well but I did not test that.
