@@ -11,8 +11,7 @@ window.addEventListener('load', function () {
         });
     }
 
-    document.querySelectorAll('.dynamic-array-widget').forEach(widgetElement => {
-
+    function initializeWidget(widgetElement) {
         const initialElement = widgetElement.querySelector('.array-item');
         const elementTemplate = initialElement.cloneNode(true);
         const parentElement = initialElement.parentElement;
@@ -35,5 +34,15 @@ window.addEventListener('load', function () {
             addRemoveEventListener(newElement);
             parentElement.appendChild(newElement);
         });
+    }
+
+    django.jQuery(".dynamic-array-widget").not(".empty-form .dynamic-array-widget").each(
+        (index, widgetElement) => initializeWidget(widgetElement)
+    );
+
+    django.jQuery(document).on('formset:added', function(event, $row, formsetName) {
+        $row[0].querySelectorAll(".dynamic-array-widget").forEach(
+            widgetElement => initializeWidget(widgetElement)
+        );
     });
-});
+  });

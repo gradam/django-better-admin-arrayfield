@@ -1,5 +1,11 @@
 # History
 
+## 1.0.6 (2020.04.15)
+
+  - Remove debugging print statements
+  - use default_app_config for easier integration
+  - Support dynamically-added inline forms
+
 ## 1.0.5 (2019.12.30)
 
   - Add python 3.8 and Django 3.0 to tests
