@@ -9,7 +9,7 @@ from django_better_admin_arrayfield.forms.widgets import DynamicArrayWidget
 class DynamicArrayField(forms.Field):
 
     default_error_messages = {
-        "item_invalid":  _("Item %(nth)s in the array did not validate: "),
+        "item_invalid": _("Item %(nth)s in the array did not validate: "),
     }
 
     def __init__(self, base_field, **kwargs):
@@ -30,10 +30,7 @@ class DynamicArrayField(forms.Field):
             except forms.ValidationError as error:
                 errors.append(
                     prefix_validation_error(
-                        error,
-                        self.error_messages["item_invalid"],
-                        code="item_invalid",
-                        params={"nth": index}
+                        error, self.error_messages["item_invalid"], code="item_invalid", params={"nth": index}
                     )
                 )
         if errors:
