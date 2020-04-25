@@ -2,7 +2,7 @@
 
 [![image](https://badge.fury.io/py/django-better-admin-arrayfield.svg)](https://badge.fury.io/py/django-better-admin-arrayfield)
 
-[![image](https://travis-ci.org/gradam/django-better-admin-arrayfield.svg?branch=master)](https://travis-ci.org/gradam/django-better-admin-arrayfield)
+[![Actions Status](https://github.com/gradam/django-better-admin-arrayfield/workflows/tests/badge.svg)](https://github.com/gradam/django-better-admin-arrayfield/actions)
 
 [![image](https://codecov.io/gh/gradam/django-better-admin-arrayfield/branch/master/graph/badge.svg)](https://codecov.io/gh/gradam/django-better-admin-arrayfield)
 
