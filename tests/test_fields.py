@@ -1,8 +1,9 @@
+from django.forms import ValidationError
+from django.forms.fields import CharField
+
 import pytest
 
 from django_better_admin_arrayfield.forms.fields import DynamicArrayField
-from django.forms.fields import CharField
-from django.forms import ValidationError
 
 
 def test_field_not_required():
