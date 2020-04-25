@@ -19,3 +19,12 @@ exclude = '''
   | build
 )/
 '''
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+known_django = ["django"]
+known_first_party = ["sample_app"]
+sections = ["FUTURE","STDLIB","DJANGO","THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]
+known_third_party = ["pytest"]

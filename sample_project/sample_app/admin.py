@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
-
 from sample_app.models import ArrayModel
 
 
