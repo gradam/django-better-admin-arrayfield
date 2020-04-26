@@ -1,5 +1,9 @@
 # History
 
+## 1.0.7
+
+  - Add possibility to i18n strings
+
 ## 1.0.6 (2020.04.15)
 
   - Remove debugging print statements
