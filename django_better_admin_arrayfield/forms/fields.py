@@ -16,6 +16,7 @@ class DynamicArrayField(forms.Field):
     def __init__(self, base_field, **kwargs):
         self.base_field = base_field
         self.max_length = kwargs.pop("max_length", None)
+        self.default = kwargs.pop("default", None)
         kwargs.setdefault("widget", DynamicArrayWidget)
         super().__init__(**kwargs)
 
@@ -24,7 +25,11 @@ class DynamicArrayField(forms.Field):
         errors = []
         value = list(filter(None, value))
         if not value:
-            cleaned_data = None
+            if callable(self.default):
+                cleaned_data = self.default()
+            else:
+                cleaned_data = self.default
+
         for index, item in enumerate(value):
             try:
                 cleaned_data.append(self.base_field.clean(item))
