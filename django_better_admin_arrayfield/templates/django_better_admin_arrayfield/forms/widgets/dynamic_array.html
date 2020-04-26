@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 {% spaceless %}
 <div class="dynamic-array-widget">
@@ -12,6 +13,6 @@
       </li>
     {% endfor %}
   </ul>
-  <div><button type="button" class="add-array-item">Add another</button></div>
+  <div><button type="button" class="add-array-item">{% trans "Add another" %}</button></div>
 </div>
 {% endspaceless %}
