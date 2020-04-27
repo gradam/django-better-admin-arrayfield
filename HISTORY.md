@@ -1,16 +1,20 @@
 # History
 
-## 1.0.7
+## 1.1.0 (2020-04-28)
+
+  - Add spanish translations
+
+## 1.0.7 (2020-04-27)
 
   - Add possibility to i18n strings
 
-## 1.0.6 (2020.04.15)
+## 1.0.6 (2020-04-15)
 
   - Remove debugging print statements
   - use default_app_config for easier integration
   - Support dynamically-added inline forms
 
-## 1.0.5 (2019.12.30)
+## 1.0.5 (2019-12-30)
 
   - Add python 3.8 and Django 3.0 to tests
 
