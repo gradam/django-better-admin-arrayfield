@@ -3,5 +3,5 @@ include CONTRIBUTING.md
 include HISTORY.md
 include LICENSE
 include README.md
-recursive-include django_better_admin_arrayfield *.html *.png *.gif *js *.css *jpg *jpeg *svg *py
+recursive-include django_better_admin_arrayfield *.html *.png *.gif *.min.js *.min.css *jpg *jpeg *svg *py
 recursive-include django_better_admin_arrayfield/locale *.po *.mo
