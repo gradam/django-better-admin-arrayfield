@@ -1,4 +1,4 @@
-bumpversion==0.5.3
+bumpversion==0.6.0
 wheel==0.34.2
 pre-commit==2.3.0
 black==19.10b0
