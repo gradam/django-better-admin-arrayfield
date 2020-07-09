@@ -1,6 +1,6 @@
 from typing import Type
 
-from django.forms import ModelForm, IntegerField
+from django.forms import IntegerField, ModelForm
 
 import pytest
 
