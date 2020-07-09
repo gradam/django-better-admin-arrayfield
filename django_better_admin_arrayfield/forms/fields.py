@@ -23,26 +23,36 @@ class DynamicArrayField(forms.Field):
     def clean(self, value):
         cleaned_data = []
         errors = []
-        value = list(filter(None, value))
+        if value is not None:
+            value = [x for x in value if x]
+
+            for index, item in enumerate(value):
+                try:
+                    cleaned_data.append(self.base_field.clean(item))
+                except forms.ValidationError as error:
+                    errors.append(
+                        prefix_validation_error(
+                            error, self.error_messages["item_invalid"], code="item_invalid", params={"nth": index}
+                        )
+                    )
+
         if not value:
             if callable(self.default):
                 cleaned_data = self.default()
             else:
                 cleaned_data = self.default
 
-        for index, item in enumerate(value):
-            try:
-                cleaned_data.append(self.base_field.clean(item))
-            except forms.ValidationError as error:
-                errors.append(
-                    prefix_validation_error(
-                        error, self.error_messages["item_invalid"], code="item_invalid", params={"nth": index}
-                    )
-                )
+        if cleaned_data is None and self.initial is not None:
+            if callable(self.initial):
+                cleaned_data = self.initial()
+            else:
+                cleaned_data = self.initial
+
         if errors:
             raise forms.ValidationError(list(chain.from_iterable(errors)))
         if not cleaned_data and self.required:
             raise forms.ValidationError(self.error_messages["required"])
+
         return cleaned_data
 
     def has_changed(self, initial, data):

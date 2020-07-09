@@ -8,13 +8,15 @@ import django_better_admin_arrayfield.models.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('sample_app', '0001_initial'),
+        ("sample_app", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='arraymodel',
-            name='sample_array',
-            field=django_better_admin_arrayfield.models.fields.ArrayField(base_field=models.CharField(max_length=20), blank=True, null=True, size=None),
+            model_name="arraymodel",
+            name="sample_array",
+            field=django_better_admin_arrayfield.models.fields.ArrayField(
+                base_field=models.CharField(max_length=20), blank=True, null=True, size=None
+            ),
         ),
     ]
