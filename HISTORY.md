@@ -1,5 +1,9 @@
 # History
 
+## 1.2.1 (2020-07-09)
+
+  - Fix tests requirements
+
 ## 1.2.0 (2020-07-09)
 
   - handle default values in model fields
