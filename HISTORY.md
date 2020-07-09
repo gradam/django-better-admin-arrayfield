@@ -1,5 +1,9 @@
 # History
 
+## 1.2.0 (2020-07-09)
+
+  - handle default values in model fields
+
 ## 1.1.0 (2020-04-28)
 
   - Add spanish translations
