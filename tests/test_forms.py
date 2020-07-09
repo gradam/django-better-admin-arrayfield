@@ -1,9 +1,10 @@
 from typing import Type
 
-import pytest
 from django.forms import ModelForm
 
-from tests.testapp.models import DefaultValueNullableModel, NullableNoDefaultModel, DefaultValueRequiredModel
+import pytest
+
+from tests.testapp.models import DefaultValueNullableModel, DefaultValueRequiredModel, NullableNoDefaultModel
 
 
 def form_factory(model) -> Type[ModelForm]:
