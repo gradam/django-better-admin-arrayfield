@@ -37,17 +37,9 @@ class DynamicArrayField(forms.Field):
                     )
 
         if not value:
-            if callable(self.default):
-                cleaned_data = self.default()
-            else:
-                cleaned_data = self.default
-
+            cleaned_data = self.default() if callable(self.default) else self.default
         if cleaned_data is None and self.initial is not None:
-            if callable(self.initial):
-                cleaned_data = self.initial()
-            else:
-                cleaned_data = self.initial
-
+            cleaned_data = self.initial() if callable(self.initial) else self.initial
         if errors:
             raise forms.ValidationError(list(chain.from_iterable(errors)))
         if not cleaned_data and self.required:
