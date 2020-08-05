@@ -14,7 +14,7 @@ Supported Python versions: [![Python 3.5](https://img.shields.io/badge/python-3.
 
 
 
-Supported Django versions: 1.11, 2.0, 2.1, 2.2, 3.0
+Supported Django versions: 2.0, 2.1, 2.2, 3.0, 3.1
 
 might work with different django/python versions as well but I did not test that.
 
