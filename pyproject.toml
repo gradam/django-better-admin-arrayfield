@@ -20,6 +20,10 @@ exclude = '''
 )/
 '''
 
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+django_find_project = false
+
 [tool.isort]
 line_length = 120
 multi_line_output = 3
