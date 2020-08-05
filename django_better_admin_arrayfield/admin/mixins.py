@@ -1,4 +1,4 @@
 class DynamicArrayMixin:
     class Media:
-        js = ("js/min/django_better_admin_arrayfield.min.js",)
-        css = {"all": ("css/min/django_better_admin_arrayfield.min.css",)}
+        js = ("js/django_better_admin_arrayfield.min.js",)
+        css = {"all": ("css/django_better_admin_arrayfield.min.css",)}
