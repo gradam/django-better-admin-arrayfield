@@ -6,7 +6,7 @@ class DynamicArrayWidget(forms.TextInput):
     template_name = "django_better_admin_arrayfield/forms/widgets/dynamic_array.html"
 
     def __init__(self, *args, **kwargs):
-        self.subwidget_form = kwargs.pop('subwidget_form', forms.TextInput)
+        self.subwidget_form = kwargs.pop("subwidget_form", forms.TextInput)
         super().__init__(*args, **kwargs)
 
     def get_context(self, name, value, attrs):
@@ -41,5 +41,5 @@ class DynamicArrayWidget(forms.TextInput):
 
 class DynamicArrayTextareaWidget(DynamicArrayWidget):
     def __init__(self, *args, **kwargs):
-        kwargs.setdefault('subwidget_form', forms.Textarea)
+        kwargs.setdefault("subwidget_form", forms.Textarea)
         super().__init__(*args, **kwargs)
