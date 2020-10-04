@@ -65,6 +65,34 @@ class MyModelAdmin(admin.ModelAdmin, DynamicArrayMixin):
 
 That's it.
 
+
+### Custom subwidget
+
+By default the subwidget (the one used for each item in the array) will be TextInput. If you want something else, you can use your own specifying it in the `formfield_overrides` of your Admin model:
+```python
+class MyWidget(DynamicArrayWidget):
+    def __init__(self, *args, **kwargs):
+        kwargs['subwidget_form'] = MyForm
+        super().__init__(*args, **kwargs)
+
+class MyModelAdmin(models.ModelAdmin, DynamicArrayMixin):
+    ...
+    formfield_overrides = {
+        DynamicArrayField: {'widget': MyWidget},
+    }
+```
+
+If you wanted to have Textarea as the subwidget, you can simply use the included drop-in widget replacement:
+```python
+from django_better_admin_arrayfield.forms.widgets import DynamicArrayTextareaWidget
+
+class MyModelAdmin(models.ModelAdmin, DynamicArrayMixin):
+    ...
+    formfield_overrides = {
+        DynamicArrayField: {'widget': DynamicArrayTextareaWidget},
+    }
+```
+
 ## Running Tests
 
 Does the code actually work?
