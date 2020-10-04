@@ -1,5 +1,9 @@
 # History
 
+## 1.4.0 (2020-10-04)
+
+  - allow choosing subwidget for DynamicArrayWidget
+
 ## 1.3.0 (2020-07-09)
 
   - Handle default values in form field
