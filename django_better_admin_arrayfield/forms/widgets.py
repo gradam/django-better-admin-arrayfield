@@ -35,6 +35,9 @@ class DynamicArrayWidget(forms.TextInput):
         except AttributeError:
             return data.get(name)
 
+    def value_omitted_from_data(self, data, files, name):
+        return False
+
     def format_value(self, value):
         return value or []
 
