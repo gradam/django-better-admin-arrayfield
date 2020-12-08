@@ -3,13 +3,6 @@
   align-items: center;
 }
 
-.dynamic-array-widget .remove_sign {
-  width: 10px;
-  height: 2px;
-  background: #a41515;
-  border-radius: 1px;
-}
-
 .dynamic-array-widget .remove {
   height: 15px;
   display: flex;
