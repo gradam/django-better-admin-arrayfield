@@ -20,3 +20,4 @@
 | Álvaro Mondéjar | [@mondeja]( https://github.com/mondeja ) |
 | Martín | [@MartinCura]( https://github.com/MartinCura ) |
 | Joshua Cender | [@sixthgear]( https://github.com/sixthgear ) |
+| Javier Matos Odut | [@javiermatos]( https://github.com/javiermatos )

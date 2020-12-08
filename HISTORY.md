@@ -1,5 +1,9 @@
 # History
 
+## 1.4.2 (2020-12-08)
+
+  - Adjust template to better match django style
+
 ## 1.4.1 (2020-12-08)
 
   - Allow submitting empty array field
