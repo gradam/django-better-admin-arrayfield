@@ -1,5 +1,9 @@
 # History
 
+## 1.4.1 (2020-12-08)
+
+  - Allow submitting empty array field
+
 ## 1.4.0 (2020-10-04)
 
   - allow choosing subwidget for DynamicArrayWidget
