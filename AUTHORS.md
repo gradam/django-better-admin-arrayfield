@@ -12,7 +12,7 @@
 | Sergei Maertens | [@sergei-maertens]( https://github.com/sergei-maertens ) |
 | 李琼羽 | [@w392807287]( https://github.com/w392807287 ) |
 | Usman Hussain | [@usmandap]( https://github.com/usmandap ) |
-| paterit | [@paterit]( https://github.com/paterit ) |
+| Wojciech Semik | [@paterit]( https://github.com/paterit ) |
 | Jules Robichaud-Gagnon | [@jrobichaud]( https://github.com/jrobichaud ) |
 | Dustin Martin | [@dmartin]( https://github.com/dmartin ) |
 | Davit Tovmasyan | [@davitovmasyan]( https://github.com/davitovmasyan ) |
