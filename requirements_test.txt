@@ -5,5 +5,5 @@ codecov==2.1.10
 pytest==6.1.2
 pytest-django==4.1.0
 pytest-cov==2.10.1
-pytest-mock==3.3.1
+pytest-mock==3.5.0
 psycopg2-binary==2.8.6
