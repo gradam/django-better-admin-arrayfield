@@ -19,7 +19,7 @@ class DynamicArrayField(forms.ChoiceField):
         self.default = kwargs.pop("default", None)
         kwargs.setdefault("widget", DynamicArrayWidget)
         super().__init__(**kwargs)
-        if hasattr(base_field, 'choices'):
+        if hasattr(base_field, "choices"):
             self.choices = base_field.choices
 
     def clean(self, value):
