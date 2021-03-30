@@ -25,14 +25,20 @@ window.addEventListener('load', function () {
 
         widgetElement.querySelector('.add-array-item').addEventListener('click', () => {
             item_count++;
-            const newElement = elementTemplate.cloneNode(true);
-            const id_parts = newElement.querySelector('input').getAttribute('id').split('_');
+            const newElementContainer = elementTemplate.cloneNode(true);
+            const newElementControl = newElementContainer.querySelectorAll('input, textarea, select')[0]
+            if(!newElementControl){
+                console.warn('Django better admin array field - can\' find correct form element ' +
+                    '- expect input or textarea as custom widget implementation')
+                return
+            }
+            const id_parts = newElementControl.getAttribute('id').split('_');
             const id = id_parts.slice(0, -1).join('_') + '_' + String(item_count - 1);
-            newElement.querySelector('input').setAttribute('id', id);
-            newElement.querySelector('input').value = '';
+            newElementControl.setAttribute('id', id);
+            newElementControl.value = '';
 
-            addRemoveEventListener(newElement);
-            parentElement.appendChild(newElement);
+            addRemoveEventListener(newElementContainer);
+            parentElement.appendChild(newElementContainer);
         });
     }
 
