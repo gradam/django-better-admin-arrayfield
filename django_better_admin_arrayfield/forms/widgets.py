@@ -9,6 +9,12 @@ class DynamicArrayWidget(forms.TextInput):
         self.subwidget_form = kwargs.pop("subwidget_form", forms.TextInput)
         super().__init__(*args, **kwargs)
 
+    def create_subwidget(self):
+        if hasattr(self, "choices") and len(self.choices):
+            return forms.Select(choices=self.choices)
+        else:
+            return self.subwidget_form()
+
     def get_context(self, name, value, attrs):
         context_value = value or [""]
         context = super().get_context(name, context_value, attrs)
@@ -21,7 +27,7 @@ class DynamicArrayWidget(forms.TextInput):
             widget_attrs = final_attrs.copy()
             if id_:
                 widget_attrs["id"] = "{id_}_{index}".format(id_=id_, index=index)
-            widget = self.subwidget_form()
+            widget = self.create_subwidget()
             widget.is_required = self.is_required
             subwidgets.append(widget.get_context(name, item, widget_attrs)["widget"])
 

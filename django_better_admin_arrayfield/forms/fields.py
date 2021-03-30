@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from django_better_admin_arrayfield.forms.widgets import DynamicArrayWidget
 
 
-class DynamicArrayField(forms.Field):
+class DynamicArrayField(forms.ChoiceField):
 
     default_error_messages = {
         "item_invalid": _("Item %(nth)s in the array did not validate: "),
@@ -19,6 +19,8 @@ class DynamicArrayField(forms.Field):
         self.default = kwargs.pop("default", None)
         kwargs.setdefault("widget", DynamicArrayWidget)
         super().__init__(**kwargs)
+        if hasattr(base_field, "choices"):
+            self.choices = base_field.choices
 
     def clean(self, value):
         cleaned_data = []
