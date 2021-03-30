@@ -10,9 +10,9 @@ class DynamicArrayWidget(forms.TextInput):
         super().__init__(*args, **kwargs)
 
     def create_subwidget(self):
-         if hasattr(self, 'choices') and len(self.choices):
-            return forms.Select(choices = self.choices)
-         else:
+        if hasattr(self, 'choices') and len(self.choices):
+            return forms.Select(choices=self.choices)
+        else:
             return self.subwidget_form()
         
     def get_context(self, name, value, attrs):
