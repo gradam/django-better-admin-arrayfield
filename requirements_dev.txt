@@ -2,4 +2,4 @@ bumpversion==0.6.0
 wheel==0.36.2
 pre-commit==2.11.1
 black==20.8b1
-psycopg2-binary==2.8.6
+psycopg2-binary==2.9.1
