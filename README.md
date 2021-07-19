@@ -78,7 +78,7 @@ class MyWidget(DynamicArrayWidget):
 class MyModelAdmin(models.ModelAdmin, DynamicArrayMixin):
     ...
     formfield_overrides = {
-        DynamicArrayField: {'widget': MyWidget},
+        ArrayField: {'widget': MyWidget},
     }
 ```
 
@@ -89,7 +89,7 @@ from django_better_admin_arrayfield.forms.widgets import DynamicArrayTextareaWid
 class MyModelAdmin(models.ModelAdmin, DynamicArrayMixin):
     ...
     formfield_overrides = {
-        DynamicArrayField: {'widget': DynamicArrayTextareaWidget},
+        ArrayField: {'widget': DynamicArrayTextareaWidget},
     }
 ```
 
