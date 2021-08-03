@@ -1,7 +1,7 @@
 coverage==5.5
 flake8==3.9.0
 tox==3.23.0
-codecov==2.1.11
+codecov==2.1.12
 pytest==6.1.2
 pytest-django==4.1.0
 pytest-cov==2.11.1
