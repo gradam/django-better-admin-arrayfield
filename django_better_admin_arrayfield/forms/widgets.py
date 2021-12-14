@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.admin.widgets import AdminSplitDateTime
+from django.utils.dateparse import parse_datetime
 
 
 class DynamicArrayWidget(forms.TextInput):
@@ -46,3 +48,24 @@ class DynamicArrayTextareaWidget(DynamicArrayWidget):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("subwidget_form", forms.Textarea)
         super().__init__(*args, **kwargs)
+
+class DatetimeWidget(DynamicArrayWidget):
+    """Datetime widget for array datetime lists"""
+
+    def __init__(self, *args, **kwargs):
+        kwargs['subwidget_form'] = AdminSplitDateTime
+        super().__init__(*args, **kwargs)
+
+    def value_from_datadict(self, data, files, name):
+        try:
+            getter = data.getlist
+            dates = getter(name + '_0')
+            times = getter(name + '_1')
+            return_data = []
+            for i in range(len(dates)):
+                if dates[i] and times[i]:
+                    return_data.append(parse_datetime(
+                        ' '.join([dates[i], times[i]])))
+            return return_data
+        except AttributeError:
+            return data.get(name)

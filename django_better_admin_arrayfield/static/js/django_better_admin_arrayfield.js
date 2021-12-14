@@ -33,9 +33,29 @@ window.addEventListener('load', function () {
 
             addRemoveEventListener(newElement);
             parentElement.appendChild(newElement);
-        });
-    }
 
+            for (const inp of document.getElementsByTagName('input')) {
+                if (
+                    inp.type === 'text' &&
+                    inp.classList.contains('vTimeField') &&
+                    !inp.nextSibling?.classList.contains('datetimeshortcuts')
+                ) {
+                    DateTimeShortcuts.addClock(inp);
+                    DateTimeShortcuts.addTimezoneWarning(inp);
+                    inp.value = '';
+                } else if (
+                    inp.type === 'text' &&
+                    inp.classList.contains('vDateField') &&
+                    !inp.nextSibling?.classList.contains('datetimeshortcuts')
+                ) {
+                    DateTimeShortcuts.addCalendar(inp);
+                    DateTimeShortcuts.addTimezoneWarning(inp);
+                    inp.value = '';
+                }
+            }
+          });
+    }
+  
     django.jQuery(".dynamic-array-widget").not(".empty-form .dynamic-array-widget").each(
         (index, widgetElement) => initializeWidget(widgetElement)
     );
