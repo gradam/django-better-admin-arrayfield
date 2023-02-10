@@ -41,8 +41,16 @@ window.addEventListener('load', function () {
     );
 
     django.jQuery(document).on('formset:added', function(event, $row, formsetName) {
-        $row[0].querySelectorAll(".dynamic-array-widget").forEach(
-            widgetElement => initializeWidget(widgetElement)
-        );
+        if (event.detail && event.detail.formsetName) {
+            // Django >= 4.1
+            event.target.querySelectorAll(".dynamic-array-widget").forEach(
+                widgetElement => initializeWidget(widgetElement)
+            );
+        } else {
+            // Django < 4.1, use $row and formsetName
+            $row[0].querySelectorAll(".dynamic-array-widget").forEach(
+                widgetElement => initializeWidget(widgetElement)
+            );
+        }
     });
   });
